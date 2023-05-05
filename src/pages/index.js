@@ -20,6 +20,13 @@ import Banner2 from "sections/banner2";
 import Banner3 from "sections/banner3";
 import Banner4 from "sections/banner4";
 import Pricing from "sections/pricing";
+import PaymentForm from "components/payment";
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+
+const stripePromise = loadStripe(
+  "pk_test_51LIAmLFozueojb1JUE6c6euwjP2ClmWm1g1dxyD9cOOpvBCgMkLgClLfXH8xvEeplqPFcYh6granpyBVYD0puaCc00HeNEtsOh"
+);
 
 export default function IndexPage() {
   return (
@@ -34,12 +41,15 @@ export default function IndexPage() {
           <KeyBanner />
           <Service />
           {/* <StatsBanner /> */}
-          <About />
-          <ContactForm />
           <Pricing />
+          <Elements stripe={stripePromise}>
+            {/* <PaymentForm /> */}
+          </Elements>
+          <ContactForm />
+          <About />
           <Faq />
           <TestimonialCard />
-          <BlogSection />
+          {/* <BlogSection /> */}
           <Subscribe />
         </Layout>
       </StickyProvider>

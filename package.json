@@ -10,6 +10,8 @@
     "postbuild": "next-sitemap"
   },
   "dependencies": {
+    "@stripe/react-stripe-js": "^2.1.0",
+    "@stripe/stripe-js": "^1.52.1",
     "countup.js": "^2.6.2",
     "dotenv": "^8.2.0",
     "framer-motion": "^2.7.5",
@@ -32,6 +34,7 @@
     "react-on-screen": "^2.1.1",
     "react-scroll": "^1.8.0",
     "react-stickynode": "^3.0.3",
+    "stripe": "^12.4.0",
     "theme-ui": "^0.3.1",
     "typeface-dm-sans": "^1.1.3"
   },

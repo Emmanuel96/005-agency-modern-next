@@ -169,8 +169,8 @@ export default Pricing;
 
 const styles = {
   pricing: {
-    paddingTop: 100,
-    paddingBottom: 150,
+    // paddingTop: 10,
+    // paddingBottom: 150,
     "@media(max-width:991px)": {
       paddingTop: 60,
       paddingBottom: 60,

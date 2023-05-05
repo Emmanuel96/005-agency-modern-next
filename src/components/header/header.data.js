@@ -12,12 +12,12 @@ export default [
     label: "Pricing",
   },
   {
-    path: "about",
-    label: "About",
-  },
-  {
     path: "support",
     label: "Support",
+  },
+  {
+    path: "about",
+    label: "About",
   },
   {
     path: "testimonial",
