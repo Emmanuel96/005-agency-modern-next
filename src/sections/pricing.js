@@ -29,86 +29,7 @@ const pricingMonthlyData = [
         isAvailable: true,
       },
     ],
-  },
-  ,
-  {
-    header: "Recommended",
-    name: "Premium",
-    description: "For startup enterprise",
-    priceWithUnit: " $89.99/",
-    pricePeriod: "mo",
-    buttonText: "Subscribe Now",
-    points: [
-      {
-        icon: <IoIosCheckmarkCircle />,
-        text: "Unlimited domains",
-        isAvailable: true,
-      },
-      {
-        icon: <IoIosCheckmarkCircle />,
-        text: "Cancel anytime.",
-        isAvailable: true,
-      },
-      {
-        icon: <IoIosCheckmarkCircle />,
-        text: "Rapid Response Support.",
-        isAvailable: true,
-      },
-    ],
-  },
-];
-
-const pricingYearlyData = [
-  {
-    header: "Recommended",
-    name: "Premium",
-    description: "For startup enterprise",
-    priceWithUnit: " $89.99/",
-    pricePeriod: "yr",
-    buttonText: "Subscribe Now",
-    points: [
-      {
-        icon: <IoIosCheckmarkCircle />,
-        text: "Unlimited domains",
-        isAvailable: true,
-      },
-      {
-        icon: <IoIosCheckmarkCircle />,
-        text: "Cancel anytime.",
-        isAvailable: true,
-      },
-      {
-        icon: <IoIosCheckmarkCircle />,
-        text: "Rapid Response Support.",
-        isAvailable: true,
-      },
-    ],
-  },
-  {
-    header: "Recommended",
-    name: "Premium",
-    description: "For startup enterprise",
-    priceWithUnit: " $89.99/",
-    pricePeriod: "yr",
-    buttonText: "Subscribe Now",
-    points: [
-      {
-        icon: <IoIosCheckmarkCircle />,
-        text: "Unlimited domains",
-        isAvailable: true,
-      },
-      {
-        icon: <IoIosCheckmarkCircle />,
-        text: "Cancel anytime.",
-        isAvailable: true,
-      },
-      {
-        icon: <IoIosCheckmarkCircle />,
-        text: "Rapid Response Support.",
-        isAvailable: true,
-      },
-    ],
-  },
+  }
 ];
 
 const Pricing = () => {
@@ -121,32 +42,6 @@ const Pricing = () => {
           tagline="Pricing Plan"
           heading="Choose your pricing policy"
         />
-        <Box sx={styles.pricing.btnWrap}>
-          <Box as="ul" sx={styles.pricing.btnUl}>
-            <Box
-              as="li"
-              className={` ${plan === false ? "active" : ""}`}
-              variant="buttons.primary"
-              sx={styles.pricing.btn}
-              onClick={() => {
-                setPlan(false);
-              }}
-            >
-              Monthly Plan
-            </Box>
-            <Box
-              as="li"
-              className={` ${plan === true ? "active" : ""}`}
-              variant="buttons.primary"
-              sx={styles.pricing.btn}
-              onClick={() => {
-                setPlan(true);
-              }}
-            >
-              Annual Plan
-            </Box>
-          </Box>
-        </Box>
 
         <Grid sx={styles.pricing.wrapper}>
           {plan === true
@@ -169,8 +64,8 @@ export default Pricing;
 
 const styles = {
   pricing: {
-    // paddingTop: 10,
-    // paddingBottom: 150,
+    margin: "auto",
+    paddingBottom: 15,
     "@media(max-width:991px)": {
       paddingTop: 60,
       paddingBottom: 60,

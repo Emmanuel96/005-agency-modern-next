@@ -42,10 +42,10 @@ export default function IndexPage() {
           <Service />
           {/* <StatsBanner /> */}
           <Pricing />
-          <Elements stripe={stripePromise}>
-            {/* <PaymentForm /> */}
-          </Elements>
-          <ContactForm />
+          {/* <Elements stripe={stripePromise}>
+            <PaymentForm />
+          </Elements> */}
+          {/* <ContactForm /> */}
           <About />
           <Faq />
           <TestimonialCard />
