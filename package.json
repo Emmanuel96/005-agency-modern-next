@@ -6,6 +6,7 @@
     "dev": "cross-env NODE_OPTIONS='--openssl-legacy-provider' next dev",
     "build": "cross-env NODE_OPTIONS='--openssl-legacy-provider' next build",
     "serve": "next start",
+    "start": "next start",
     "export": "next export",
     "postbuild": "next-sitemap"
   },
