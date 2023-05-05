@@ -1,9 +1,6 @@
 {
   "name": "@landing/005-next",
   "version": "0.0.1",
-  "engines": {
-    "node": ">=14.0.0"
-  },
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_OPTIONS='--openssl-legacy-provider' next dev",
