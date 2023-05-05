@@ -12,6 +12,7 @@
   "dependencies": {
     "@stripe/react-stripe-js": "^2.1.0",
     "@stripe/stripe-js": "^1.52.1",
+    "caniuse-lite": "^1.0.30001482",
     "countup.js": "^2.6.2",
     "dotenv": "^8.2.0",
     "framer-motion": "^2.7.5",
@@ -23,7 +24,7 @@
     "polished": "^4.2.2",
     "prettier": "^2.1.2",
     "rc-drawer": "^4.1.0",
-    "react": "16.13.0",
+    "react": "^16.13.0",
     "react-countup": "^4.3.3",
     "react-custom-scrollbars": "^4.2.1",
     "react-dom": "16.13.0",
