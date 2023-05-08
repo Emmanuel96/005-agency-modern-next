@@ -9,8 +9,6 @@ const data = {
   title: "Layered in Deep Experience",
   description:
     "Our team consists of senior security engineers, data privacy engineers and Machine learning engineers with solid experience protecting the biggest financial services companies, energy companies and healthcare companies. \n We decided to band together, utilizing skills learnt protecting big enterprise companies to build best-in-class monitoring and privacy protection systems for remote workers.",
-  btnName: "Explore Details",
-  btnURL: "#",
 };
 
 export default function Knowledge() {
@@ -21,8 +19,6 @@ export default function Knowledge() {
           <TextFeature
             title={data.title}
             description={data.description}
-            btnName={data.btnName}
-            btnURL={data.btnURL}
           />
         </Box>
         <Box sx={styles.thumbnail}>

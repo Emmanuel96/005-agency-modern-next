@@ -9,8 +9,6 @@ const data = {
   title: "Realtime Advanced Monitoring and Protection",
   description:
     "Using the best-in-class bot masking engines, GhostModeCyber continuously masks your metadata to prevent identification by employee-monitoring tools that might be used to generate compliance reports to your employer",
-  btnName: "Explore Details",
-  btnURL: "#",
 };
 
 export default function Knowledge() {
@@ -21,8 +19,6 @@ export default function Knowledge() {
           <TextFeature
             title={data.title}
             description={data.description}
-            btnName={data.btnName}
-            btnURL={data.btnURL}
           />
         </Box>
         <Box sx={styles.thumbnail}>

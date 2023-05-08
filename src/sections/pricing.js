@@ -44,11 +44,7 @@ const Pricing = () => {
         />
 
         <Grid sx={styles.pricing.wrapper}>
-          {plan === true
-            ? pricingYearlyData.map((price, index) => (
-                <PriceCard key={index} data={price} />
-              ))
-            : null}
+  
           {plan === false
             ? pricingMonthlyData.map((price, index) => (
                 <PriceCard key={index} data={price} />

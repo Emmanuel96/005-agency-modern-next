@@ -11,18 +11,6 @@ const data = {
   title: "Why it Matters",
   description:
     "Data brokers create shadow profiles on you that can include your personal work email addresses. These insights can be sold to employee monitoring tools which can generate reports to detect people with multiple jobs and sell this data to your employer. GhostModeCyber proactively removes your data from databases that collect, trade, sell or publish it.",
-  btnName: "Explore Details",
-  btnURL: "#",
-  points: [
-    {
-      icon: <IoIosCheckmarkCircle />,
-      text: "Unlimited design possibility",
-    },
-    {
-      icon: <IoIosCheckmarkCircle />,
-      text: "Completely responsive features",
-    },
-  ],
 };
 
 export default function Banner2() {
@@ -36,9 +24,6 @@ export default function Banner2() {
           <TextFeature
             title={data.title}
             description={data.description}
-            btnName={data.btnName}
-            btnURL={data.btnURL}
-            points={data.points}
           />
         </Box>
       </Container>

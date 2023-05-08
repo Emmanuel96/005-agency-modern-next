@@ -10,19 +10,7 @@ import DrawingArrow from "assets/drawing-arrow.svg";
 const data = {
   title: "Guaranteed Privacy for remote workers with multiple gigs",
   description:
-    "Combining AI and high performance computing, GhostModeCyber helps protect the privacy of remote workers with multiple gigs. Our monitoring engine provides continuous scanning and automated remediation to ensure our clients are always protected from employee monitoring bots.\nData brokers collect your personal information and sell it to companies that create employee monitoring tools. We help protect you by automatically scanning, monitoring and remediating data privacy incidents with the data brokers to get your information off their databases.",
-  btnName: "Explore Details",
-  btnURL: "#",
-  points: [
-    {
-      icon: <IoIosCheckmarkCircle />,
-      text: "Unlimited design possibility",
-    },
-    {
-      icon: <IoIosCheckmarkCircle />,
-      text: "Completely responsive features",
-    },
-  ],
+    "Combining AI and high performance computing, GhostModeCyber helps protect the privacy of remote workers with multiple gigs. Our monitoring engine provides continuous scanning and automated remediation to ensure our clients are always protected from employee monitoring bots.",
 };
 
 export default function Banner2() {
@@ -36,9 +24,6 @@ export default function Banner2() {
           <TextFeature
             title={data.title}
             description={data.description}
-            btnName={data.btnName}
-            btnURL={data.btnURL}
-            points={data.points}
           />
         </Box>
       </Container>
