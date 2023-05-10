@@ -12,12 +12,13 @@ export default function PriceCard({
     buttonText = "Start Free Trial",
     anotherOption,
     points,
+    price_No
   },
 }) {
   const lineItems = [
     // { price: "price_1ABCD", quantity: 2 },
     {
-      price: "price_1N4o89Fozueojb1J4IxN5CGO",
+      price: price_No,
       quantity: 1
     }
   ];

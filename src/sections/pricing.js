@@ -4,14 +4,46 @@ import { IoIosCheckmarkCircle, IoIosCloseCircle } from "react-icons/io";
 import BlockTitle from "components/block-title";
 import PriceCard from "../components/price-card";
 
-const pricingMonthlyData = [
+const pricingData = [
+  {
+    header: "",
+    name: "Standard",
+    description: "For startup enterprise",
+    priceWithUnit: " $49.99",
+    pricePeriod: "mo",
+    buttonText: "Subscribe Now",
+    price_No: "price_1N6BNpFozueojb1J4JLWEwf7",
+    points: [
+      {
+        icon: <IoIosCheckmarkCircle />,
+        text: "Two domains",
+        isAvailable: true,
+      },
+      {
+        icon: <IoIosCheckmarkCircle />,
+        text: "Standard Email Support",
+        isAvailable: true,
+      },
+      {
+        icon: <IoIosCheckmarkCircle />,
+        text: "30-Day Money Back Guaranteed",
+        isAvailable: true,
+      },
+      {
+        icon: <IoIosCheckmarkCircle />,
+        text: "Self Service Tool",
+        isAvailable: true,
+      },
+    ],
+  },
   {
     header: "Recommended",
     name: "Premium",
     description: "For startup enterprise",
-    priceWithUnit: " $89.99/",
+    priceWithUnit: " $59.99",
     pricePeriod: "mo",
     buttonText: "Subscribe Now",
+    price_No: "price_1N6BOzFozueojb1JCflGsj3v",
     points: [
       {
         icon: <IoIosCheckmarkCircle />,
@@ -20,16 +52,21 @@ const pricingMonthlyData = [
       },
       {
         icon: <IoIosCheckmarkCircle />,
-        text: "Cancel anytime.",
+        text: "Rapid Priority Support",
         isAvailable: true,
       },
       {
         icon: <IoIosCheckmarkCircle />,
-        text: "Rapid Response Support.",
+        text: "Personalized Exposure Risk Report ",
+        isAvailable: true,
+      },
+      {
+        icon: <IoIosCheckmarkCircle />,
+        text: "30-Day Money Back Guaranteed",
         isAvailable: true,
       },
     ],
-  }
+  },
 ];
 
 const Pricing = () => {
@@ -44,9 +81,8 @@ const Pricing = () => {
         />
 
         <Grid sx={styles.pricing.wrapper}>
-  
           {plan === false
-            ? pricingMonthlyData.map((price, index) => (
+            ? pricingData.map((price, index) => (
                 <PriceCard key={index} data={price} />
               ))
             : null}
