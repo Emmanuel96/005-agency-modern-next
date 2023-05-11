@@ -10,7 +10,7 @@ import DrawingArrow from "assets/drawing-arrow.svg";
 const data = {
   title: "Guaranteed Privacy for remote workers with multiple gigs",
   description:
-    "Combining AI and high performance computing, GhostModeCyber helps protect the privacy of remote workers with multiple gigs. Our monitoring engine provides continuous scanning and automated remediation to ensure our clients are always protected from employee monitoring bots.",
+    "GhostModeCyber is the only custom-built solution designed specifically to scrub the internet of your work related identity in order to guarantee your privacy if you work multiple jobs at the same time. Our monitoring engine provides continuous scanning and automated remediation to ensure our clients are always protected from employee monitoring bots.",
 };
 
 export default function Banner2() {
