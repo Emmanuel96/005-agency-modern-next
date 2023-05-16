@@ -12,7 +12,7 @@ const pricingData = [
     priceWithUnit: " $49.99",
     pricePeriod: "mo",
     buttonText: "Subscribe Now",
-    price_No: "price_1N6BNpFozueojb1J4JLWEwf7",
+    price_No: "price_1N8Q62ByEkz97ZD9h2IcefJG",
     points: [
       {
         icon: <IoIosCheckmarkCircle />,
@@ -43,7 +43,7 @@ const pricingData = [
     priceWithUnit: " $59.99",
     pricePeriod: "mo",
     buttonText: "Subscribe Now",
-    price_No: "price_1N6BOzFozueojb1JCflGsj3v",
+    price_No: "price_1N8Q6dByEkz97ZD9nSXX56xN",
     points: [
       {
         icon: <IoIosCheckmarkCircle />,
