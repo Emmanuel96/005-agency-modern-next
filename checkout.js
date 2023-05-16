@@ -5,7 +5,7 @@ export async function checkout(lineItems) {
   const getStripe = () => {
     if (!stripePromise) {
       stripePromise = loadStripe(
-        "pk_test_51LIAmLFozueojb1JUE6c6euwjP2ClmWm1g1dxyD9cOOpvBCgMkLgClLfXH8xvEeplqPFcYh6granpyBVYD0puaCc00HeNEtsOh"
+        "pk_test_51N6aFKByEkz97ZD9ep5zG6odMaKg3SRChOSoZUhDZ12Q1j9CNC2hsdHsi8HPjryWg41AhZY1Fi2xWZ3ajW70Rp0f00gCVH3bCF"
       );
     }
     return stripePromise;
@@ -16,6 +16,6 @@ export async function checkout(lineItems) {
     mode: "subscription",
     lineItems,
     successUrl: `${window.location.origin}?session_id={CHECKOUT_SESSION_ID}`,
-    cancelUrl: window.location.origin
-  })
+    cancelUrl: window.location.origin,
+  });
 }
