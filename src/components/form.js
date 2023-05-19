@@ -19,23 +19,40 @@ export default function ContactForm() {
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    const formData = {
+      name,
+      email,
+      message,
+    };
+
+    //send the form data
+    const response = await fetch("/api/send-email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    if (response.ok) {
+      alert("Email sent successfully!");
+      setName("");
+      setEmail("");
+      setPhone("");
+      setMessage("");
+    } else {
+      alert("Error");
+    }
+
     // Here, you can add the logic to handle form submission, such as sending an email or making an API call.
     console.log({ name, email, phone, message });
-    // After submission, you can clear the form inputs.
-    setName("");
-    setEmail("");
-    setPhone("");
-    setMessage("");
   };
 
   return (
     <section id="support" sx={{ variant: "section.profit" }}>
       <Container sx={styles.banner.container}>
-        <Heading sx={styles.banner.contentBox} as="h3" variant="heroPrimary">
-          Support
-        </Heading>
         <Text variant="heroSecondary">
           Whether you’re here after support, information or guidance, we’d love
           to hear from you Contact us at info@ghostmodecyber.com or, fill out
