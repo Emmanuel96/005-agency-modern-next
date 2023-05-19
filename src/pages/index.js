@@ -38,8 +38,10 @@ export default function IndexPage() {
           <Service />
           {/* <StatsBanner /> */}
           <Pricing />
+          <ContactForm />
           <About />
           <Faq />
+
           <TestimonialCard />
           {/* <BlogSection /> */}
           <Subscribe />
