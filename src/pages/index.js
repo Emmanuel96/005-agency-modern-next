@@ -44,7 +44,7 @@ export default function IndexPage() {
 
           <TestimonialCard />
           {/* <BlogSection /> */}
-          <Subscribe />
+          {/* <Subscribe /> */}
         </Layout>
       </StickyProvider>
     </ThemeProvider>
