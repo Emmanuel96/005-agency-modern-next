@@ -12,10 +12,12 @@ export async function checkout(lineItems) {
   };
 
   const stripe = await getStripe();
-  await stripe.redirectToCheckout({
+  const check = await stripe.redirectToCheckout({
     mode: "subscription",
     lineItems,
-    successUrl: `${window.location.origin}?session_id={CHECKOUT_SESSION_ID}`,
+    successUrl: `${window.location.origin}/api/payment-details?session_id={CHECKOUT_SESSION_ID}`,
     cancelUrl: window.location.origin,
   });
+
+  console.log(check);
 }
