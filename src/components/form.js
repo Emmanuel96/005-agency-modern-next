@@ -55,7 +55,7 @@ export default function ContactForm() {
       <Container sx={styles.banner.container}>
         <Text variant="heroSecondary">
           Whether you’re here after support, information or guidance, we’d love
-          to hear from you Contact us at info@ghostmodecyber.com or, fill out
+          to hear from you. Contact us at info@ghostmodecyber.com or, fill out
           and submit the form below. We will aim to get back to you within 2
           working days.
         </Text>

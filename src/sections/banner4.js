@@ -8,7 +8,7 @@ import KnowledgeThumb from "assets/images/knowledge-thumb.png";
 const data = {
   title: "Layered in Deep Experience",
   description:
-    "Our team consists of senior security engineers, data privacy engineers and Machine learning engineers with solid experience protecting the biggest financial services companies, energy companies and healthcare companies. \n We decided to band together, utilizing skills learnt protecting big enterprise companies to build best-in-class monitoring and privacy protection systems for remote workers.",
+    "Our team consists of senior security engineers, data privacy engineers and Machine learning engineers with solid experience. \n We decided to band together, utilizing skills learnt protecting big enterprise companies to build best-in-class monitoring and privacy protection systems for remote workers.",
 };
 
 export default function Knowledge() {
