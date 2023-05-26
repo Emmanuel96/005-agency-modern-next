@@ -1,7 +1,7 @@
 import Stripe from "stripe";
 const sgMail = require("@sendgrid/mail");
 
-const stripe = new Stripe(process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY);
+const stripe = new Stripe(process.env.NEXT_SECRET_KEY);
 sgMail.setApiKey(process.env.NEXT_PUBLIC_SENDGRID_API);
 
 export default async function handler(req, res) {
