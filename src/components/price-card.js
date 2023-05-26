@@ -1,4 +1,4 @@
-import { Box, Card, Text, Heading, Button } from "theme-ui";
+import { Box, Card, Text, Heading, Button, Link } from "theme-ui";
 import React from "react";
 import List from "./list";
 import { checkout } from "../../checkout";
@@ -12,15 +12,16 @@ export default function PriceCard({
     buttonText = "Start Free Trial",
     anotherOption,
     points,
-    price_No
+    price_No,
+    price_link,
   },
 }) {
   const lineItems = [
     // { price: "price_1ABCD", quantity: 2 },
     {
       price: price_No,
-      quantity: 1
-    }
+      quantity: 1,
+    },
   ];
   return (
     <Card
@@ -41,15 +42,20 @@ export default function PriceCard({
           <span>/Monthly</span>
         </Text>
         <Box sx={styles.buttonGroup}>
-          <Button
-            onClick={() => {
-              checkout(lineItems);
-            }
-            }
-            variant="primary"
-            aria-label={buttonText}
-          >
-            {buttonText}
+          <Button variant="primary" aria-label={buttonText}>
+            <Link
+              sx={{
+                textDecoration: "none",
+                color: "white",
+                fontWeight: "bold",
+                "&:hover": {
+                  textDecoration: "underline",
+                },
+              }}
+              href={price_link}
+            >
+              {buttonText}
+            </Link>
           </Button>
         </Box>
       </Box>

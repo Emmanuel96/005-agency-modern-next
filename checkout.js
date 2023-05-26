@@ -1,4 +1,5 @@
 import { loadStripe } from "@stripe/stripe-js";
+import { useState } from "react";
 
 export async function checkout(lineItems) {
   let stripePromise = null;

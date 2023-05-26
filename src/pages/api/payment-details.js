@@ -22,20 +22,20 @@ export default async function handler(req, res) {
       //   .payment_intent;
       // const paymentIntent = await stripe.paymentIntents.retrieve(invoice);
       // const paymentInfo = session.payment_intent;
-      const customer = session.customer_details;
-      console.log(customer.email);
+      // const customer = session.customer_details;
+      // console.log(customer.email);
 
-      const msg = {
-        to: customer.email,
-        from: "emmanuel@csr-accreditation.co.uk",
-        subject: "Payment Confirmation",
-        html: "sdhjdshdsjgvdsh",
-      };
+      // const msg = {
+      //   to: customer.email,
+      //   from: "emmanuel@csr-accreditation.co.uk",
+      //   subject: "Payment Confirmation",
+      //   html: "sdhjdshdsjgvdsh",
+      // };
 
-      await sgMail.send(msg);
+      // await sgMail.send(msg);
 
       // Return the payment details
-      res.status(200).json(customer).end();
+      res.status(200).json(session).end();
     } catch (error) {
       console.error(error);
       res.status(500).json({ error: "An error occurred" });
