@@ -25,15 +25,13 @@ export default function Footer() {
               mt: ["10px", null, null, null, null, "0"],
             }}
           >
-            Copyright by {new Date().getFullYear()} RedQ, Inc
+            Copyright by {new Date().getFullYear()} GhostModeCyber, Inc
           </Text>
         </Box>
         <Box sx={styles.linksWrap}>
-          <Link path="/">Home</Link>
-          <Link path="/">Advertise</Link>
-          <Link path="/">Supports</Link>
-          <Link path="/">Marketing</Link>
-          <Link path="/">FAQ</Link>
+          <Link path="#home">Home</Link>
+          <Link path="#support">Supports</Link>
+          <Link path="#faq">FAQ</Link>
         </Box>
       </Container>
     </Box>

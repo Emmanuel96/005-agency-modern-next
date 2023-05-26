@@ -75,6 +75,7 @@ const accordionData = [
 
 const FAQ = () => {
   return (
+    <section id="faq">
     <Box as="section">
       <Container>
         <BlockTitle
@@ -99,7 +100,8 @@ const FAQ = () => {
           </Box>
         </Flex>
       </Container>
-    </Box>
+      </Box>
+      </section>
   );
 };
 
