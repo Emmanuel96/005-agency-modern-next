@@ -23,7 +23,6 @@ import Pricing from "sections/pricing";
 import PaymentForm from "components/payment";
 import { Elements } from "@stripe/react-stripe-js";
 
-
 export default function IndexPage() {
   return (
     <ThemeProvider theme={theme}>

@@ -1,12 +1,12 @@
 import Stripe from "stripe";
 const sgMail = require("@sendgrid/mail");
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+const stripe = new Stripe(process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY);
+sgMail.setApiKey(process.env.NEXT_PUBLIC_SENDGRID_API);
 
 export default async function handler(req, res) {
   if (req.method === "GET") {
     try {
-      sgMail.setApiKey(process.env.SENDGRID_API);
       const { session_id } = req.query;
 
       // Retrieve the session_id from the query parameters
@@ -23,21 +23,19 @@ export default async function handler(req, res) {
       // const paymentIntent = await stripe.paymentIntents.retrieve(invoice);
       // const paymentInfo = session.payment_intent;
       const customer = session.customer_details;
+      console.log(customer.email);
 
       const msg = {
         to: customer.email,
         from: "emmanuel@csr-accreditation.co.uk",
         subject: "Payment Confirmation",
-        html: `
-        Name: ${customer.name}
-        Invoice_id: ${session.invoice}
-        `,
+        html: "sdhjdshdsjgvdsh",
       };
 
       await sgMail.send(msg);
 
       // Return the payment details
-      res.status(200).end();
+      res.status(200).json(customer).end();
     } catch (error) {
       console.error(error);
       res.status(500).json({ error: "An error occurred" });
