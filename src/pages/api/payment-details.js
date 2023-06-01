@@ -1,4 +1,5 @@
 import Stripe from "stripe";
+import { buffer } from "micro";
 const sgMail = require("@sendgrid/mail");
 
 const stripe = new Stripe(process.env.NEXT_SECRET_KEY);
@@ -6,7 +7,7 @@ sgMail.setApiKey(process.env.NEXT_PUBLIC_SENDGRID_API);
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
-    const buf = await Buffer(req);
+    const buf = await buffer(req);
     const sig = req.headers["stripe-signature"];
     let event;
 
