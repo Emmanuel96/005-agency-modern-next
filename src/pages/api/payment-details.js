@@ -30,8 +30,10 @@ export default async function handler(req, res) {
     if (event.type === "payment_intent.succeeded") {
       const payment_intent = event.data.object.id;
       const paymentIntent = await stripe.paymentIntents.retrieve(
-        payment_intent, {
-          client_secret: event.data.get("client_secret")
+        "pi_3NEEyhByEkz97ZD91kfD6FzR",
+        {
+          client_secret:
+            "pi_3NEEyhByEkz97ZD91kfD6FzR_secret_kqoeOtOEVXf4OmBmGKDwrSgD7",
         }
       );
       const msg = {
