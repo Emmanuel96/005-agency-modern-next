@@ -7,6 +7,7 @@ sgMail.setApiKey(process.env.NEXT_PUBLIC_SENDGRID_API);
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
+    console.log(req);
     const buf = await buffer(req);
     const sig = req.headers["stripe-signature"];
     let event;
@@ -23,7 +24,7 @@ export default async function handler(req, res) {
     }
     if (event.type === "payment_intent.succeeded") {
       const payment_intent = event.data.object;
-      console.log(payment_intent)
+      console.log(payment_intent);
     }
   }
 }
