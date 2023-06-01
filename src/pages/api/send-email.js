@@ -5,7 +5,7 @@ export default async function handler(req, res) {
     const { name, email, message } = req.body;
     sgMail.setApiKey(process.env.NEXT_PUBLIC_SENDGRID_API);
     const msg = {
-      to: "oluwateezzy03@gmail.com",
+      to: "mhaniekan@yahoo.com",
       from: "wailogamesorg@gmail.com",
       subject: "support",
       html: `Name: ${name}<br>

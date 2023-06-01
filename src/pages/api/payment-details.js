@@ -30,17 +30,16 @@ export default async function handler(req, res) {
     if (event.type === "payment_intent.succeeded") {
       const payment_intent = event.data.object.id;
       const paymentIntent = await stripe.paymentIntents.retrieve(
-        "pi_3NEEyhByEkz97ZD91kfD6FzR",
+        payment_intent,
         {
-          client_secret:
-            "pi_3NEEyhByEkz97ZD91kfD6FzR_secret_kqoeOtOEVXf4OmBmGKDwrSgD7",
+          client_secret: event.data.object.client_secret,
         }
       );
       const msg = {
-        to: "oluwateezzy03@gmail.com",
+        to: `${paymentIntent.receipt_email}`,
         from: "wailogamesorg@gmail.com",
         subject: "support",
-        html: `${paymentIntent.receipt_email}`,
+        html: "Thank you for suscribing",
       };
       sgMail.send(msg);
     }
