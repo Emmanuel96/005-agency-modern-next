@@ -31,7 +31,7 @@ export default async function handler(req, res) {
       const payment_intent = event.data.object.id;
       const paymentIntent = await stripe.paymentIntents.retrieve(
         payment_intent, {
-          client_secret: event.data.client_secret
+          client_secret: event.data.get("client_secret")
         }
       );
       const msg = {
