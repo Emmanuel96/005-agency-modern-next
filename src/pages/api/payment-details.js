@@ -5,43 +5,24 @@ const stripe = new Stripe(process.env.NEXT_SECRET_KEY);
 sgMail.setApiKey(process.env.NEXT_PUBLIC_SENDGRID_API);
 
 export default async function handler(req, res) {
-  if (req.method === "GET") {
+  if (req.method === "POST") {
+    const buf = await Buffer(req);
+    const sig = req.headers["stripe-signature"];
+    let event;
+
     try {
-      const { session_id } = req.query;
-
-      // Retrieve the session_id from the query parameters
-      if (!session_id) {
-        res.status(400).json({ error: "Missing session_id" });
-        return;
-      }
-
-      // Retrieve payment details from the Stripe API
-      const session = await stripe.checkout.sessions.retrieve(session_id);
-      // const invoiceId = session.invoice;
-      // const invoice = (await stripe.invoices.retrieve(invoiceId))
-      //   .payment_intent;
-      // const paymentIntent = await stripe.paymentIntents.retrieve(invoice);
-      // const paymentInfo = session.payment_intent;
-      // const customer = session.customer_details;
-      // console.log(customer.email);
-
-      // const msg = {
-      //   to: customer.email,
-      //   from: "emmanuel@csr-accreditation.co.uk",
-      //   subject: "Payment Confirmation",
-      //   html: "sdhjdshdsjgvdsh",
-      // };
-
-      // await sgMail.send(msg);
-
-      // Return the payment details
-      res.status(200).json(session).end();
-    } catch (error) {
-      console.error(error);
-      res.status(500).json({ error: "An error occurred" });
+      event = stripe.webhooks.constructEvent(
+        buf.toString(),
+        sig,
+        process.env.NEXT_SECRET_KEY
+      );
+    } catch (err) {
+      console.log(err.message);
+      return res.status(400).send(`${err.message}`);
     }
-  } else {
-    res.setHeader("Allow", ["GET"]);
-    res.status(405).end(`Method ${req.method} Not Allowed`);
+    if (event.type === "payment_intent.succeeded") {
+      const payment_intent = event.data.object;
+      return res.status(200).send(payment_intent)
+    }
   }
 }
