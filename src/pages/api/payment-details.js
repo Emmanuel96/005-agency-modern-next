@@ -5,6 +5,12 @@ const sgMail = require("@sendgrid/mail");
 const stripe = new Stripe(process.env.NEXT_SECRET_KEY);
 sgMail.setApiKey(process.env.NEXT_PUBLIC_SENDGRID_API);
 
+export const config = {
+  api: {
+    bodyParser: false,
+  },
+};
+
 export default async function handler(req, res) {
   if (req.method === "POST") {
     const buf = await buffer(req);
