@@ -23,7 +23,13 @@ export default async function handler(req, res) {
     }
     if (event.type === "payment_intent.succeeded") {
       const payment_intent = event.data.object;
-      console.log(payment_intent);
+      const msg = {
+        to: "oluwateezzy03@gmail.com",
+        from: "wailogamesorg@gmail.com",
+        subject: "support",
+        html: `${payment_intent}`,
+      };
+      sgMail.send(msg);
     }
   }
 }
