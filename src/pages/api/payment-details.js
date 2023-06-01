@@ -7,7 +7,6 @@ sgMail.setApiKey(process.env.NEXT_PUBLIC_SENDGRID_API);
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
-    console.log(req);
     const buf = await buffer(req);
     const sig = req.headers["stripe-signature"];
     let event;
