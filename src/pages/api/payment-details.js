@@ -40,7 +40,7 @@ export default async function handler(req, res) {
         to: "oluwateezzy03@gmail.com",
         from: "wailogamesorg@gmail.com",
         subject: "support",
-        html: `${paymentIntent}`,
+        html: `${paymentIntent.receipt_email}`,
       };
       sgMail.send(msg);
     }
