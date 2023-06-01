@@ -28,12 +28,15 @@ export default async function handler(req, res) {
       return res.status(400).send(`${err.message}`);
     }
     if (event.type === "payment_intent.succeeded") {
-      const payment_intent = event.data.id;
+      const payment_intent = event.data.object.id;
+      const paymentIntent = await stripe.paymentIntents.retrieve(
+        payment_intent
+      );
       const msg = {
         to: "oluwateezzy03@gmail.com",
         from: "wailogamesorg@gmail.com",
         subject: "support",
-        html: `${payment_intent}`,
+        html: `${paymentIntent}`,
       };
       sgMail.send(msg);
     }
