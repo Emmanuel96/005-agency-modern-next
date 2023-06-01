@@ -14,7 +14,7 @@ export default async function handler(req, res) {
       event = stripe.webhooks.constructEvent(
         buf.toString(),
         sig,
-        process.env.NEXT_SECRET_KEY
+        process.env.NEXT_WEBHOOK_KEY
       );
     } catch (err) {
       console.log(err.message);
@@ -22,7 +22,7 @@ export default async function handler(req, res) {
     }
     if (event.type === "payment_intent.succeeded") {
       const payment_intent = event.data.object;
-      return res.status(200).send(payment_intent)
+      console.log(payment_intent)
     }
   }
 }
