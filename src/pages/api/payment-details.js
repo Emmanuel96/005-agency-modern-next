@@ -28,7 +28,7 @@ export default async function handler(req, res) {
       return res.status(400).send(`${err.message}`);
     }
     if (event.type === "payment_intent.succeeded") {
-      const payment_intent = event.data.object;
+      const payment_intent = event.data.id;
       const msg = {
         to: "oluwateezzy03@gmail.com",
         from: "wailogamesorg@gmail.com",
