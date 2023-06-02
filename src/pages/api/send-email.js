@@ -2,7 +2,7 @@ const sgMail = require("@sendgrid/mail");
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
-    const { name, email, message } = req.body;
+    const { name, email, message, phone } = req.body;
     sgMail.setApiKey(process.env.NEXT_PUBLIC_SENDGRID_API);
     const msg = {
       to: "mhaniekan@yahoo.com",
@@ -10,6 +10,7 @@ export default async function handler(req, res) {
       subject: "support",
       html: `Name: ${name}<br>
       Email: ${email}<br>
+      Phone: ${phone}
       ${message}`,
     };
 

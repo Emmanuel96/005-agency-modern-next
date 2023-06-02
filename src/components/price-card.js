@@ -1,7 +1,7 @@
 import { Box, Card, Text, Heading, Button, Link } from "theme-ui";
 import React from "react";
 import List from "./list";
-import { checkout } from "../../checkout";
+import { checkout } from "../../api/checkout";
 
 export default function PriceCard({
   data: {
