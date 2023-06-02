@@ -1,11 +1,11 @@
 {
-	"functions": {
+  "functions": {
     "api/payment-details.js": {
       "memory": 1024,
       "maxDuration": 30
     }
-	},
-	"build": {
-		"env": {}
-	}
+  },
+  "build": {
+    "env": {}
+  }
 }
