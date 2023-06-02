@@ -10,18 +10,13 @@ import ServiceSection from "../sections/service-section";
 import Service from "../sections/service";
 import Faq from "../sections/faq";
 import About from "../sections/about";
-import StatsBanner from "sections/bannerStats";
 import TestimonialCard from "../sections/testimonial";
-import BlogSection from "../sections/blog-section";
-import Subscribe from "../sections/subscribe";
 import KeyBanner from "sections/key-banner";
 import ContactForm from "components/form";
 import Banner2 from "sections/banner2";
 import Banner3 from "sections/banner3";
 import Banner4 from "sections/banner4";
 import Pricing from "sections/pricing";
-import PaymentForm from "components/payment";
-import { Elements } from "@stripe/react-stripe-js";
 
 export default function IndexPage() {
   return (
@@ -35,15 +30,11 @@ export default function IndexPage() {
           <Banner4 />
           <KeyBanner />
           <Service />
-          {/* <StatsBanner /> */}
           <Pricing />
           <ContactForm />
           <About />
           <Faq />
-
           <TestimonialCard />
-          {/* <BlogSection /> */}
-          {/* <Subscribe /> */}
         </Layout>
       </StickyProvider>
     </ThemeProvider>
