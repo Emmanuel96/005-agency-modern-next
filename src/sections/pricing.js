@@ -13,7 +13,7 @@ const pricingData = [
     pricePeriod: "mo",
     buttonText: "Subscribe Now",
     price_No: "price_1N8Q62ByEkz97ZD9h2IcefJG",
-    price_link: "https://buy.stripe.com/test_3csdU65EMeyU25i8wx",
+    price_link: "https://buy.stripe.com/3cs4io1CJ6IA4EgfYY",
     points: [
       {
         icon: <IoIosCheckmarkCircle />,
@@ -45,7 +45,7 @@ const pricingData = [
     pricePeriod: "mo",
     buttonText: "Subscribe Now",
     price_No: "price_1N8Q6dByEkz97ZD9nSXX56xN",
-    price_link: "https://buy.stripe.com/test_5kAcQ21ow1M86ly000",
+    price_link: "https://buy.stripe.com/fZe4io1CJ5Ew2w8aEF",
     points: [
       {
         icon: <IoIosCheckmarkCircle />,
