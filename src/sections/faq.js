@@ -79,7 +79,7 @@ const FAQ = () => {
       <Box as="section">
         <Container>
           <BlockTitle
-            title="Frequently Ask Question"
+            title="Frequently Asked Question"
             text="Ask your question and meet"
           />
           <Flex sx={styles.flex}>

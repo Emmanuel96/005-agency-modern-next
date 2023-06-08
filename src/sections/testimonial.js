@@ -17,8 +17,8 @@ const data = [
     description:
       "Remote workers trust GhostModeCyber to proactively Protect their Identity from monitoring Tools and DataBrokers used by employers to identify employees with multiple jobs.",
     avatar: Avatar1,
-    name: "Denny Hilguston",
-    designation: "@denny.hil",
+    name: "Thomas Daniel",
+    designation: "@thom.dan",
     review: 4,
   },
   {
@@ -37,8 +37,8 @@ const data = [
     description:
       "Proactively protect Your Identity From Monitoring tools Used by Your Employer to phish out employees with multiple jobs.",
     avatar: Avatar3,
-    name: "Denny Hilguston",
-    designation: "@denny.hil",
+    name: "Jacob Liam",
+    designation: "@liam.jab",
     review: 5,
   },
   {
@@ -47,8 +47,8 @@ const data = [
     description:
       "GhostModeCyber continuously scrubs your online metadata to ensure you remain anonymous from employee-monitoring tools.",
     avatar: Avatar4,
-    name: "Denny Hilguston",
-    designation: "@denny.hil",
+    name: "Benjamin Lucas",
+    designation: "@Lucas.ben",
     review: 4,
   },
 ];
