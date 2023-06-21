@@ -90,7 +90,7 @@ const FAQ = () => {
               <Heading as="h3">Do you have more questions?</Heading>
               <Text as="p">Please send us a message</Text>
               <Link sx={styles.askButton} path="#support">
-                Ask your Question
+                Ask your Questions
               </Link>
             </Box>
           </Flex>
