@@ -79,7 +79,7 @@ const FAQ = () => {
       <Box as="section">
         <Container>
           <BlockTitle
-            title="Frequently Asked Question"
+            title="Frequently Asked Questions"
             text="Ask your question and meet"
           />
           <Flex sx={styles.flex}>
@@ -87,7 +87,7 @@ const FAQ = () => {
               <Accordion items={accordionData} />
             </Box>
             <Box sx={styles.content}>
-              <Heading as="h3">Do you have more questions?</Heading>
+              <Heading as="h3">Do you have more question?</Heading>
               <Text as="p">Please send us a message</Text>
               <Link sx={styles.askButton} path="#support">
                 Ask your Questions
