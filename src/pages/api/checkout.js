@@ -1,38 +1,27 @@
 import Stripe from "stripe";
 
-const stripe = new Stripe(process.env.Stripe_Secret, {
-  apiVersion: "2020-08-27",
-});
+const stripe = new Stripe(
+  "sk_test_51N6aFKByEkz97ZD9pXn4FwfJdb5ZFSnbFRy3nRFEPPi4Ch5QRRYXlxJ4X637UcWPdSiIeA134eZ1B2xf1qqtlU1X00eiv2NBZJ"
+);
 
-export default async function handler(req, res) {
+export default async (req, res) => {
   if (req.method === "POST") {
-    const { amount, token } = req.body;
-
     try {
-      const charge = await stripe.charges.create({
-        amount,
-        currency: "usd",
-        source: token.id,
-        description: "payment",
+      const { lineItems } = req.body;
+
+      const check = await stripe.redirectToCheckout({
+        mode: "subscription",
+        lineItems,
+        success_url: "http://localhost:3000/",
+        cancel_url: "http://localhost:3000/",
       });
 
-      res.status(200).json({
-        success: true,
-        message: "Payment Successful",
-        charge: charge.id,
-      });
+      return res.status(200).json({ sessionId: check });
     } catch (error) {
-      res.status(500).json({
-        success: false,
-        message: "Payment Failed",
-        error: error.message,
-      });
+      console.error("Error creating Stripe Checkout session:", error);
+      return res.status(500).json({ error: "Server error" });
     }
   }
-  else {
-    res.status(404).json({
-      success: false,
-      message: "Invalid request",
-    });
-  }
-}
+
+  return res.status(405).json({ error: "Method Not Allowed" });
+};

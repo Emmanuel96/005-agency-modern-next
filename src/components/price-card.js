@@ -1,7 +1,9 @@
-import { Box, Card, Text, Heading, Button, Link } from "theme-ui";
-import React from "react";
+import { Box, Card, Text, Heading, Button, Link, Input } from "theme-ui";
+import React, { useState, useEffect } from "react";
 import List from "./list";
-import { checkout } from "../../api/checkout";
+import Popup from "./popup";
+
+
 
 export default function PriceCard({
   data: {
@@ -23,6 +25,45 @@ export default function PriceCard({
       quantity: 1,
     },
   ];
+
+  const [showPopup, setShowPopup] = useState(false);
+  const [submittedValue, setSubmittedValue] = useState("");
+
+  const openPopup = () => {
+    setShowPopup(true);
+  };
+
+  const closePopup = () => {
+    setShowPopup(false);
+  };
+
+  const handleSubmit = (value) => {
+    setSubmittedValue(value);
+    closePopup();
+  };
+
+  useEffect(async () => {
+    if (typeof window !== "undefined") {
+      const storedEmails = JSON.parse(localStorage.getItem("workEmails"));
+      if (storedEmails) {
+        setSubmittedValue(submittedValue);
+         const response = await fetch("/api/sucess_mail", {
+           method: "POST",
+           headers: {
+             "Content-Type": "application/json",
+           },
+           body: JSON.stringify({"workEmails":storedEmails}),
+         });
+
+         if (response.ok) {
+           alert("Email sent successfully!");
+           localStorage.removeItem("workEmails");
+         } else {
+           alert("Error");
+         }
+      }
+    }
+  }, []);
   return (
     <Card
       className={header ? "package__card active" : "package__card"}
@@ -52,16 +93,22 @@ export default function PriceCard({
                   textDecoration: "underline",
                 },
               }}
-              href={price_link}
+              onClick={openPopup}
             >
               {buttonText}
             </Link>
           </Button>
+          {showPopup && <Popup onClose={closePopup} onSubmit={handleSubmit} lineItems={lineItems} />}
         </Box>
       </Box>
     </Card>
   );
 }
+const saveEmailsToLocalStorage = (emails) => {
+  if (typeof window !== "undefined") {
+    localStorage.setItem("workEmails", JSON.stringify(emails));
+  }
+};
 
 const styles = {
   pricingBox: {

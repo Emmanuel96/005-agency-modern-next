@@ -4,6 +4,7 @@ import { StickyProvider } from "../contexts/app/app.provider";
 import theme from "theme";
 import SEO from "components/seo";
 import Layout from "components/layout";
+import ReusableApp from "components/botton";
 import Banner from "../sections/banner";
 import KeyFeature from "../sections/key-feature";
 import ServiceSection from "../sections/service-section";
@@ -28,6 +29,7 @@ export default function IndexPage() {
           <Banner />
           <Banner3 />
           <Banner4 />
+          <ReusableApp />
           <KeyBanner />
           <Service />
           <Pricing />

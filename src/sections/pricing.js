@@ -12,7 +12,7 @@ const pricingData = [
     priceWithUnit: " $29.99",
     pricePeriod: "mo",
     buttonText: "Subscribe Now",
-    price_No: "price_1N8Q62ByEkz97ZD9h2IcefJG",
+    price_No: "price_1NGmOrByEkz97ZD9W68LBnig",
     price_link: "https://buy.stripe.com/9AQg164OV0kcb2E146",
     points: [
       {
@@ -44,7 +44,7 @@ const pricingData = [
     priceWithUnit: " $39.99",
     pricePeriod: "mo",
     buttonText: "Subscribe Now",
-    price_No: "price_1N8Q6dByEkz97ZD9nSXX56xN",
+    price_No: "price_1NGmVOByEkz97ZD9CgNJsBN7",
     price_link: "https://buy.stripe.com/5kA5msdlreb26Mo3cf",
     points: [
       {
