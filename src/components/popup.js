@@ -4,7 +4,7 @@ import { Elements, useStripe, useElements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import { checkout } from "../../api/checkout";
 
-const stripePromise = loadStripe(process.env.NEXT_SECRET_KEY);
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY);
 
 const saveEmailsToLocalStorage = (emails) => {
   if (typeof window !== "undefined") {
