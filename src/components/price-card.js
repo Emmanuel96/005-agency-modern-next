@@ -56,10 +56,9 @@ export default function PriceCard({
          });
 
          if (response.ok) {
-           alert("Email sent successfully!");
            localStorage.removeItem("workEmails");
          } else {
-           alert("Error");
+           return
          }
       }
     }
