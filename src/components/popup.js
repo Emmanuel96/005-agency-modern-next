@@ -28,7 +28,6 @@ const Popup = ({ onClose, onSubmit, lineItems }) => {
     const split_mail = inputValue.split(",").map((email) => email.trim());
     checkout(lineItems);
     onSubmit(inputValue);
-    console.log(split_mail, lineItems);
   };
 
   return (
@@ -59,7 +58,7 @@ const Popup = ({ onClose, onSubmit, lineItems }) => {
           <Input
             type="text"
             value={inputValue}
-            placeholder="Enter Work Emails Separated by comma...."
+            placeholder="Please enter your work emails to subscribe...."
             onChange={handleChange}
             mb={3}
           />
@@ -71,7 +70,7 @@ const Popup = ({ onClose, onSubmit, lineItems }) => {
                 variant="contained"
                 sx={{ flex: "1", marginRight: "8px" }}
               >
-                Submit
+                Subscribe
               </Button>
               <Button
                 variant="contained"
